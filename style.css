@@ -1,0 +1,322 @@
+/* not exactly sure why but copied part from challenge 1 (Margin - Fills in the edge of the page) */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary:#10454F; /* Header and Borders */
+    --secondary:#506266; /* Body Text? */
+    --tetriary:#818274; /* Background */
+    --secondlight:#A3AB78; /* Header Text */
+    --light:#BDE038; /* Actions Hover.. */
+
+    --border: 4px solid var(--primary); /* Project Boxes Border and side page border */
+    --insidebox: 3px solid var(--primary); /* Borders for inside box and profile pic */
+    --Edge: 3px; /* Make the edges of the main borders a tad bit round */
+    --Edge2: 0 5px 5px 0; /* Edge inside the project box */
+
+    --opa: 0.70; /* Sets the opacity of the images in each box without hover */
+}
+
+/* Background color */
+body {
+    background-color: var(--tetriary);
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}
+
+
+/* This changes the header color and position */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2%;
+    background-color: var(--primary);
+    font-family:Georgia, 'Lucida Grande', 'Geneva', serif;
+    color: var(--secondlight); /* Text */
+}
+/* My Name Font Size */
+header h1 {
+    font-size: 225%;
+}
+/* Navagation Font Size */
+header nav {
+    font-size: 150%;
+}
+
+/* Changes the color and decoration of the nav link */
+nav a {
+    padding: 5px; /* Change to percentage later */
+    color: var(--secondlight); /* Text */
+    text-decoration: none;
+}
+
+/* Hover Works */
+nav a:hover {
+    color: var(--light);
+}
+
+/* Background Banner */
+.sotto-header {
+    height: 100%;
+    width: 100%;
+    padding: .5%;
+    background-image: url(./images/portfolio-banner.png);
+    background-size: 100%;
+}
+
+/* Resize My Profile Image */
+.Profile {
+    width: 15%;
+    height: 15%;
+    border: 4px solid var(--primary);
+    border-radius: var(--Edge);
+/* Can I add a shade over my image? */
+}
+
+
+/* Main Section Holds all Three Pages Together (About Me, Work, Contact) */
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-items: space-between;
+}
+
+/* Three Page's (title and content) of About Me, Work, and Contact Info */
+.page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content:space-between;
+    padding: 2%;
+}
+
+/* Changes the column on the left with page titles and size of content "box" */
+.page h2 {
+    flex: 0 0 12%;
+    text-align: right;
+    padding-right: 2%;
+    border-right: var(--border);
+}
+
+/* Changes the column on the right with page content and size of content "box" */
+.page div {
+    flex: 0 0 80%;
+}
+
+
+/* Contains all the Projects in the Work Page Coordinate with contact info in Contact page */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    height: 90vh;
+}
+
+/* Decorate Text for Titles in the Box's */
+.flex-container a {
+    text-decoration: none;
+}
+
+/* Makes the Project 1 (bigger project box) */
+.flex-box-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-content: flex-end;
+    background-image: url(./images/musinion.png);
+    background-size: 100%;
+    background-color: black;
+    padding-bottom: .5%;
+    border: var(--border);
+    margin: .5%;
+    width: 65.5%;
+    height: 47.5%;
+    border-radius: var(--Edge);
+    opacity: var(--opa);
+}
+
+/* Make the boxes for the Projects */
+.flex-boxs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-content: flex-end;
+    padding-bottom: .5%;
+    border: var(--border);
+    margin: .5%;
+    width: 32.25%;
+    height: 47.5%;
+    border-radius: var(--Edge);
+    opacity: var(--opa);
+}
+
+/* Holds the all the Project's Title and Subtitle Box */
+.flex-box-1 div, .flex-boxs div {
+    display: flex;
+    flex-direction: column;
+    border: var(--insidebox);
+    background-color: var(--primary);
+    color: var(--secondlight);
+    border-radius: var(--Edge2);
+    /* width: 20%; */
+    /* height: 20%; */
+}
+
+/* Make a hover action over the boxes */
+.flex-box-1:hover, .flex-boxs:hover {
+    border: 3.5px solid var(--light);
+    opacity: 1;
+}
+
+/* Make a hover action for the inside box when hovered over the outside project box */
+/* .flex-box-1:hover > div, .flex-boxs:hover > div {
+    border: 3px solid var(--light);
+} */
+
+/* Add Image to Project Password */
+.place2 {
+    background-image: url(./images/project1.jpg);
+    background-size: 130%;
+}
+
+/* Add Image to Project Prework */
+.place3 {
+    background-image: url(./images/multiple-guess1.png);
+    background-size: 135%;
+}
+
+/* Add Image to Placeholders */
+.place4 {
+    background-image: url(./images/time-block.jpg);
+    background-size: 135%;
+}
+
+.place5 {
+    background-image: url(./images/password-gen.png);
+    background-size: 135%;
+}
+
+
+/* Contains the Contact info inside the contacts page Coordinate with Projects in working page*/
+.contact-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Text decoration of the Contact List */
+.contact-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+/* Add Email Icon */
+.email {
+    width: 48px;
+    height: 31.39px;
+}
+
+/* Add GitHub Icon */
+.github {
+    width: 48px;
+    height: 46.82px;
+}
+
+/* Add LinkedIn Icon */
+.linkedin {
+    width: 50px;
+    height: 50px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .Profile {
+        width: 22%;
+        height: 22%
+    }
+    .page h2 {
+        flex: 0 0 20%;
+    }
+    .page div {
+        flex: 0 0 75%;
+    }
+    .flex-container {
+        height: fit-content;
+    }
+    .flex-box-1 {
+        width: 99%;
+        height: 32.5%;
+    }
+    .flex-boxs {
+        width: 49%;
+        height: 32.5%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    .sotto-header {
+        display: flex;
+        justify-content: center;
+        background-size: 150%;
+    }
+    .Profile {
+        width: 250px;
+    }
+    .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .page h2 {
+        flex: auto;
+        padding-right: 0;
+        border-right: 0;
+    }
+    .page div {
+        flex: auto;
+    }
+    .flex-container {
+        height: fit-content;
+        justify-content: center;
+    }
+    .flex-box-1, .flex-boxs {
+        width: 300px;
+        height: 270px;
+        margin: 8px;
+        padding: 0;
+    }
+    .flex-box-1 {
+        background-size: 140%;
+    }
+    .flex-box-1 div, .flex-boxs div {
+        border-radius: 0 0 0 0;
+        border: 0;
+        margin-bottom: 10px;
+    }
+    #contactinfo {
+        display: flex;
+        width: 100%;
+    }
+    .contact-list img {
+        margin: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
